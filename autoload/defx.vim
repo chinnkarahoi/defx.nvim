@@ -54,8 +54,6 @@ function! defx#call_async_action(action, ...) abort
 
   let context = defx#init#_context({})
   let args = defx#util#convert2list(get(a:000, 0, []))
-  call defx#util#rpcrequest(
-        \ '_defx_async_action', [a:action, args, context], v:true)
 endfunction
 function! defx#redraw() abort
   call defx#util#rpcrequest('_defx_redraw', [], v:false)
